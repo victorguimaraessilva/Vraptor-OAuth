@@ -19,8 +19,11 @@ O primeiro passo do OAuth será obter uma autorização do usuário para que o m
 Forma de Obtenção do Cliente_ID:
 
 1.1) O usuário irá fornecer seu username ou email juntamente com sua senha.
+
 1.2) O servidor irá verificar se o usuário e senha está correto.
+
 1.2.1) Caso seja um cliente inválido o servidor irá responder como access_denied.
+
 1.2.2) Caso seja um cliente válido o servidor irá enviar o Client_ID e deverá criar as seguintes variáveis:
 
 access_token: Código de acesso criado pelo servidor (MD5, SHA, BASE64) que será enviado ao cliente.
@@ -35,8 +38,11 @@ deverá utilizar esse access_token em todas as suas requisições à API para qu
 2.2) Como no Vraptor temos a opção de criar um Interceptor que irá interceptar todas as requisições, podemos utilizá-lo para capturar o access token enviado pelo usuário, juntamente com o client_id e verificar se estão corretos. 
 
 2.2.1) Caso o access_token + client_id estejam corretos o Interceptor deverá permitir a conexão ao controller (API)
+
 2.2.2) Caso esteja errado, o usuário será informado e seu accesso será bloqueado redirecionando para a página de login.
+
 2.2.3) Caso o access_token + client_id esteja correto porém expirado, o usuário será informado que seu token foi expirado, obrigando o mesmo a enviar o access_token + client_id juntamente com o refresh_token.
+
 2.2.3.1) Caso os dados estejam corretos, um novo access_token e refresh_token serão enviados ao cliente assim como na sua primeira autenticação autorizando o acesso do mesmo à API com seu novo access_token.
 
 2.2.3.2)  Caso os dados estejam incorretos, o usuário será informado e seu accesso será bloqueado redirecionando para a página de login.
