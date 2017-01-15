@@ -43,7 +43,32 @@ deverá utilizar esse access_token em todas as suas requisições à API para qu
 
 Abaixo temos um esquema de como implementei o meu fluxo do OAuth2.0 no Vraptor.
 
+  +---------+                                               +---------------+
+  |         |--(A)------- Usuário autentica- LOGIN -------->|    Login      |
+  |         |                                               |               |
+  |         |<-(B)------- AccessToken + Expires_At -------- |  Controller   |
+  |         |            & Refresh Token + ClientID         |               |
+  |         |                                               |               |
+  |         |                            +-----------+      |               |
+  |         |--(C)---- Access Token ---->|           |      +---------------+
+  |         |                            |           |                 
+  |         |<-(D)- Recebe Informaçoes --| Controller|     
+  | Usuário |                            |  Vraptor  |      
+  |         |--(E)---- Access Token ---->|           |      
+  |         |                            |           |     
+  |         |<-(F)- Erro token inválido -|           |      +---------------+
+  |         |         ou token expirado  +-----------+      |               |
+  |         |                                               |               |
+  |         |--(G)----------- Refresh Token ----------->    |  Interceptor  |
+  |         |                                               |    Vraptor    |
+  |         |<-(H)----------- Access Token -------------    |               |
+  +---------+           & Optional Refresh Token            +---------------+
 
 
+Obs: Devemos lembrar que o RegisterController e o LoginController deverá sempre permitir o acesso do usuário
+sem necessidade do access_token pois será através destes que o usuário poderá obter seu acess_token.
 
 
+Caso possua dicas ou dúvidas poderá me contactar através do email:
+
+victorgs301194@hotmail.com 
