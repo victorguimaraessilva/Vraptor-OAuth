@@ -55,7 +55,9 @@ sem necessidade do access_token pois será através destes que o usuário poder�
 Tecnologias e Dependências Utilizadas:
 
 VRaptor 4 
+
 Maven 5
+
 Java 8
 Mysql 5 
 Java8 plugin
