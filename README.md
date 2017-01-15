@@ -45,6 +45,18 @@ deverá utilizar esse access_token em todas as suas requisições à API para qu
 Obs: Devemos lembrar que o RegisterController e o LoginController deverá sempre permitir o acesso do usuário
 sem necessidade do access_token pois será através destes que o usuário poderá obter seu acess_token.
 
+----------------------------------------------------------------------------------------------------------------------------------------
+Tecnologias e Dependências Utilizadas:
+
+VRaptor 4 
+Maven 5
+Java 8
+Mysql 5 
+Java8 plugin
+Simple mail plugin
+Servlet Container
+JPA plugin
+----------------------------------------------------------------------------------------------------------------------------------------
 
 Caso possua dicas ou dúvidas poderá me contactar através do email:
 
