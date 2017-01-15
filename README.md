@@ -59,10 +59,15 @@ VRaptor 4
 Maven 5
 
 Java 8
+
 Mysql 5 
+
 Java8 plugin
+
 Simple mail plugin
+
 Servlet Container
+
 JPA plugin
 ----------------------------------------------------------------------------------------------------------------------------------------
 
