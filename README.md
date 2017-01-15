@@ -68,7 +68,8 @@ Simple mail plugin
 
 Servlet Container
 
-JPA plugin
+JPA Plugin
+
 ----------------------------------------------------------------------------------------------------------------------------------------
 
 Caso possua dicas ou dúvidas poderá me contactar através do email:
