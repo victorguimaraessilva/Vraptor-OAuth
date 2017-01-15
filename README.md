@@ -72,6 +72,14 @@ JPA Plugin
 
 ----------------------------------------------------------------------------------------------------------------------------------------
 
+**************************** Possíveis ERROS ****************************
+
+Caused by: java.lang.AssertionError: Parameters aren't present for remove. You must compile your code with -parameters argument.
+
+Caso ao subir a aplicação no Eclipse utilizando Tomcat8 você se depare com esse erro, basta clicar com o botão direito do mouse no Projeto, selecionar Propriedades, ir na aba Java Compiler e marcar a última opção(checkbox) "Store information about method parameters (usable via reflection).
+
+
+
 Caso possua dicas ou dúvidas poderá me contactar através do email:
 
 victorgs301194@hotmail.com 
