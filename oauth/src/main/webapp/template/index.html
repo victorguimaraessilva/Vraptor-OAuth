@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css">
+<title>OAuth2.0 Simples (VictorGuimas)</title>
+</head>
+<body>
+ 	
+	<div class="container">
+		
+		<div class="col-lg-6 col-md-6">
+	         <form class="form-signin">
+		        <h2 class="form-signin-heading">Logar no Sistema</h2>
+		        
+		        <label for="username" class="sr-only">Usuário</label>
+		        <input type="text" id="username" class="form-control" placeholder="Inserir usuário" required autofocus>
+		        
+		        <label for="password" class="sr-only">Senha</label>
+		        <input type="password" id="password" class="form-control" placeholder="Digite sua senha" required>
+		        
+		        <div class="checkbox">
+		          <label>
+		            <input type="checkbox" value="remember-me"> Lembrar-me
+		          </label>
+		        </div>
+		        
+		         <button class="btn btn-lg btn-success btn-block" type="button" id="login">Entrar</button>
+		         <button class="btn btn-lg btn-info btn-block" type="button">Cadastrar</button>
+		      </form>
+	    </div>
+    </div>
+    
+</body>    
+
+<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+	if (!window.jQuery) {
+		document.write('<script src="js/libs/jquery-2.1.1.min.js"><\/script>');
+	}
+</script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script>
+	if (!window.jQuery.ui) {
+		document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+	}
+</script>
+    
+<script type="text/javascript">    
+  
+$(document).ready(function() {
+	
+	$("#login").click(function(){
+		
+		$.ajax({
+			method: "POST",
+			url: "${pageContext.request.contextPath}/login",
+			data: {
+				"username": $("#username").val(),
+				"password": $("#password").val(),
+			},
+			async: false,
+			dataType: "json"
+		})
+		.done(function( data ) {
+			 console.log(data);
+		});	
+	});
+		
+});
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css">
+<title>OAuth2.0 Simples (VictorGuimas)</title>
+</head>
+<body>
+ 	
+	<div class="container">
+		
+		<div class="col-lg-6 col-md-6">
+	         <form class="form-signup" action="${linkTo[RegisterController].save}" method="post" id="registerForm" >
+		        <h2 class="form-signup-heading">Cadastrar no Sistema</h2>
+		        
+		        <label for="name" class="sr-only">Nome</label>
+		        <input type="text" id="name" name="user.name" class="form-control" placeholder="Inserir nome" required autofocus>
+		        
+		        <label for="username" class="sr-only">Usuario</label>
+		        <input type="text" id="username" name="user.username" class="form-control" placeholder="Inserir usuário" required>
+		        
+		        
+		        <label for="password" class="sr-only">Senha</label>
+		        <input type="password" id="password" name="user.password" class="form-control" placeholder="Digite sua senha" required>
+		      
+		         <button class="btn btn-lg btn-success btn-block" type="submit">Cadastrar</button>
+		      </form>
+	    </div>
+    </div>
+</html>
